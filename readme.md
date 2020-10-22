@@ -52,7 +52,7 @@ class BirdAlgo extends Resolver
 }
 ```
 
-##implement all methods you need
+##implement all methods you need in BirdAlgo class
 ```PHP
 protected function hasHookedBeak(): bool
     {
