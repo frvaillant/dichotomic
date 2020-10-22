@@ -18,7 +18,8 @@ class BirdAlgo extends Resolver
 ```
 
 ##Make the array representing your algorithm
-This is a basic example to determine some bird species
+This is a basic example used in order to determinate some bird species answering a few questions :
+Has this bird a hooked beak ? If yes is it nocturnal ? if yes has it some feather crests ? If no it is an owl.
 
 ```PHP
 use Dichotomic\Resolver;
@@ -92,7 +93,7 @@ protected function hasHookedBeak(): bool
 
 ##Create index.php file
 ```PHP 
-$algo = new Algo();
+$algo = new BirdAlgo();
 $algo->execute();
 echo $algo->getResult();
 
