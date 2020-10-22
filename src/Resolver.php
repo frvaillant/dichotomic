@@ -1,7 +1,7 @@
 <?php
 namespace Dichotomic;
 
-use ResolverInterface;
+use Dichotomic\ResolverInterface;
 
 abstract class Resolver implements ResolverInterface
 {
