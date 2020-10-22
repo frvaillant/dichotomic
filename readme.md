@@ -55,33 +55,28 @@ class BirdAlgo extends Resolver
 
 ##implement all methods you need in BirdAlgo class
 ```PHP
-protected function hasHookedBeak(): bool
+    protected function hasHookedBeak(): bool
     {
-        // Ce qu'il faut pour tester si l'oiseau a un bec crochu
         return true;
     }
 
     protected function isNocturnal(): bool
     {
-        // Ce qu'il faut pour tester si l'oiseau est nocturne
         return true;
     }
 
     protected function hasFeatherCrests(): bool
     {
-        // Ce qu'il faut pour tester si l'oiseau a des aigrettes
         return false;
     }
 
     protected function hasPointedWings(): bool
     {
-        // Ce qu'il faut pour tester si l'oiseau a des ailes pointues
         return true;
     }
 
     protected function ended($result): void
     {
-        // Retourne le résultat $result de l'algorithme
         $this->result = $result;
     }
 
