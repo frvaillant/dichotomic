@@ -55,6 +55,9 @@ class BirdAlgo extends Resolver
 
 ##implement all methods you need in BirdAlgo class
 ```PHP
+    /**
+    * NOTE : all the methods listed as key in $algo array must be implemented below
+     */
     protected function hasHookedBeak(): bool
     {
         return true;
