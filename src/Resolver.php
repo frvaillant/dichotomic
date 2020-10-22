@@ -1,6 +1,6 @@
 <?php
 namespace Dichotomic;
-
+require('ResolverInterface.php');
 use Dichotomic\ResolverInterface;
 use \RecursiveIteratorIterator;
 use \RecursiveArrayIterator;
@@ -97,28 +97,27 @@ abstract class Resolver implements ResolverInterface
             return;
         }
 
-        // For each key in $algo
-        foreach ($this->algo as $key => $step) {
+        $step = $this->algo[array_key_first($this->algo)];
+        $key = array_key_first($this->algo);
 
-            // If $algo[$key] is not an array
-            if (!is_array($step[$this->{$key}()])) {
+        if (!is_array($step[$this->{$key}()])) {
 
-                // Function name is the key with sometimes some parameters
-                $functionName = $this->getFunctionName($step[$this->{$key}()]);
-                $param = $this->getFunctionParameters($step[$this->{$key}()]);
+            // Function name is the key with sometimes some parameters
+            $functionName = $this->getFunctionName($step[$this->{$key}()]);
+            $param = $this->getFunctionParameters($step[$this->{$key}()]);
 
-                // Then execute function
-                $this->{$functionName}($param);
+            // Then execute function
+            $this->{$functionName}($param);
 
-            } else {
+        } else {
 
-                // We reduce $algo
-                $this->algo = $step[$this->{$key}()];
+            // We reduce $algo
+            $this->algo = $step[$this->{$key}()];
 
-                // And then redo
-                $this->execute();
-            }
+            // And then redo
+            $this->execute();
         }
+
     }
 
     /**
