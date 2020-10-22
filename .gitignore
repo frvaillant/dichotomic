@@ -2,3 +2,5 @@
 .DS_Store
 Algo.php
 index.php
+
+/vendor/

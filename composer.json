@@ -1,0 +1,21 @@
+{
+    "name": "frvaillant/dichotomic",
+    "description": "This package aims to helps to easily implement the resolution of a dichotomous algorithm",
+    "license": "MIT",
+    "keywords": ["algorithm", "resolution", "dichotomous"],
+
+    "authors": [
+          {
+              "name": "francoisvaillant",
+              "email": "frvaillant@gmail.com"
+          }
+      ],
+      "require": {
+        "php": ">=7.0"
+      },
+      "autoload": {
+        "psr-4": {
+          "Dichotomic": "src/"
+        }
+      }
+}
