@@ -5,6 +5,7 @@ use ResolverInterface;
 
 abstract class Resolver implements ResolverInterface
 {
+    const SEPARATOR = ':';
 
     /**
      * Have to be described in children
@@ -40,7 +41,7 @@ abstract class Resolver implements ResolverInterface
 
             // Check if method needs parameters
             if (strstr($algoKey, ':')) {
-                list($methodName, $parameter) = explode(':', $algoKey);
+                list($methodName, $parameter) = explode(self::SEPARATOR, $algoKey);
             }
 
             // If algo is a method and if method doesn't exist in child
@@ -60,8 +61,8 @@ abstract class Resolver implements ResolverInterface
     public function checkMethods()
     {
         if (count($this->listUnavailableMethods()) > 0) {
-            $message  = 'Vous devez implémenter toutes les méthodes nécessaires à résoudre votre algorithme';
-            $message .= ' Les méthodes ' . implode('(), ', $this->listUnavailableMethods()) . '() sont manquantes';
+            $message  = 'You have to implement all methods necessary for your algorithm resolution';
+            $message .= ' Methods ' . implode('(), ', $this->listUnavailableMethods()) . '() are missing';
             throw new \Exception($message);
         }
         return true;
