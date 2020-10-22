@@ -2,6 +2,8 @@
 namespace Dichotomic;
 
 use Dichotomic\ResolverInterface;
+use \RecursiveIteratorIterator;
+use \RecursiveArrayIterator;
 
 abstract class Resolver implements ResolverInterface
 {
