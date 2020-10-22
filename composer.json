@@ -3,7 +3,6 @@
     "description": "This package aims to helps to easily implement the resolution of a dichotomous algorithm",
     "license": "MIT",
     "keywords": ["algorithm", "resolution", "dichotomous"],
-    "version" : "1.0",
     "authors": [
           {
               "name": "francoisvaillant",
@@ -13,7 +12,6 @@
       "require": {
         "php": ">=7.0.0"
       },
-      "minimum-stability": "stable",
       "autoload": {
         "psr-4": {
           "Dichotomic\\": "src/"
