@@ -42,7 +42,7 @@ abstract class Resolver implements ResolverInterface
             $methodName = $algoKey;
 
             // Check if method needs parameters
-            if (strstr($algoKey, ':')) {
+            if (strstr($algoKey, self::SEPARATOR)) {
                 list($methodName, $parameter) = explode(self::SEPARATOR, $algoKey);
             }
 
@@ -117,7 +117,6 @@ abstract class Resolver implements ResolverInterface
             // And then redo
             $this->execute();
         }
-
     }
 
     /**
@@ -130,7 +129,7 @@ abstract class Resolver implements ResolverInterface
      */
     private function getMembers(string $step, string $wanted): string
     {
-        list($functionName, $parameter) = explode(':', $step);
+        list($functionName, $parameter) = explode(self::SEPARATOR, $step);
         return ${$wanted};
     }
 
@@ -143,7 +142,7 @@ abstract class Resolver implements ResolverInterface
      */
     private function getFunctionName(string $function): string
     {
-        if (!strstr($function, ':')) {
+        if (!strstr($function, self::SEPARATOR)) {
             return $function;
         }
         return $this->getMembers($function, 'functionName');
@@ -157,7 +156,7 @@ abstract class Resolver implements ResolverInterface
      */
     private function getFunctionParameters(string $function): ?string
     {
-        if (!strstr($function, ':')) {
+        if (!strstr($function, self::SEPARATOR)) {
             return null;
         }
         return $this->getMembers($function, 'parameter');
